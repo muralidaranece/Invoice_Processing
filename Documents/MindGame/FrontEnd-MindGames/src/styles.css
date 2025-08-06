@@ -1,0 +1,43 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --font-one: 'Roboto', sans-serif;
+    --font-two: "Noto Sans", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-two);
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,27 @@
+<div class="quiz-container" *ngIf="!quizCompleted">
+  <h2>Quiz</h2>
+  <div class="quiz-question">
+    <p>{{ questions[currentQuestionIndex]?.questionText }}</p>
+  </div>
+
+  <div class="quiz-options">
+    <button
+      *ngFor="let option of [questions[currentQuestionIndex]?.option1, questions[currentQuestionIndex]?.option2, questions[currentQuestionIndex]?.option3, questions[currentQuestionIndex]?.option4]"
+      [class.correct]="selectedOption === option && option === questions[currentQuestionIndex]?.correctOption"
+      [class.wrong]="selectedOption === option && option !== questions[currentQuestionIndex]?.correctOption"
+      (click)="selectOption(option)"
+    >
+      {{ option }}
+    </button>
+  </div>
+
+  <div class="quiz-progress">
+    Question {{ currentQuestionIndex + 1 }} / {{ questions.length }}
+  </div>
+</div>
+
+<div class="quiz-result" *ngIf="quizCompleted">
+  <h2>Quiz Completed!</h2>
+  <p>Your Score: {{ score }} / {{ questions.length }}</p>
+  <button (click)="restartQuiz()">Play Again</button>
+</div>

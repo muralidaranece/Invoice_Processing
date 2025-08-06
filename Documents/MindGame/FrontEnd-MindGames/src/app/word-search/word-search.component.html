@@ -1,0 +1,20 @@
+<div class="word-search-container">
+  <h2>Word Search</h2>
+
+  <div class="word-grid">
+    <div *ngFor="let row of grid; let rowIndex = index" class="grid-row">
+      <div *ngFor="let letter of row; let colIndex = index" class="grid-cell">
+        {{ letter }}
+      </div>
+    </div>
+  </div>
+
+  <div class="word-list">
+    <h3>Words to Find:</h3>
+    <ul>
+      <li *ngFor="let word of wordsToFind" (click)="selectWord(word)" [class.found]="isFound(word)">
+        {{ word }}
+      </li>
+    </ul>
+  </div>
+</div>

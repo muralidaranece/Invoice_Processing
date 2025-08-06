@@ -1,0 +1,12 @@
+<div class="home-container">
+  <h1>Welcome{{ username ? ', ' + username : '' }}!</h1>
+
+  <div class="game-menu">
+    <button (click)="navigateToGame('word-search')">Word Search</button>
+    <button (click)="navigateToGame('quiz')">Quiz</button>
+    <button (click)="navigateToGame('four-letters')">Four Letters</button>
+    <button (click)="navigateToGame('word-hunt')">Word Hunt</button>
+  </div>
+
+  <button class="logout-btn" (click)="logout()">Logout</button>
+</div>
